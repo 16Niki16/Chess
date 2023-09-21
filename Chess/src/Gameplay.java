@@ -13,6 +13,8 @@ public class Gameplay extends JPanel {
 	private final ImageIcon BlackRook;
 	private final ImageIcon WhiteKnight; 
 	private final ImageIcon BlackKnight;
+	int basicPositionStart = - 2;
+	int basicPositionEnd = 344;
 	
 	
 public Gameplay(){	
