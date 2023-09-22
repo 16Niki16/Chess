@@ -12,6 +12,9 @@ public class Gameplay extends JPanel {
 	private final ImageIcon whiteRook;
 	private final ImageIcon WhiteKnight; 
 	private final ImageIcon WhitePawn;
+	private final ImageIcon WhiteQueen;
+	private final ImageIcon WhiteKing;
+	private final ImageIcon WhiteBishop;
 	
 	private final ImageIcon BlackRook;
 	private final ImageIcon BlackKnight;
@@ -31,6 +34,9 @@ public Gameplay(){
 	whiteRook = new ImageIcon("images/WhiteRook.png");
 	WhiteKnight = new ImageIcon("images/white Knight.png");
 	WhitePawn = new ImageIcon("images/whitePawn.png");
+	WhiteQueen = new ImageIcon("images/WhiteQueen.png");
+	WhiteKing = new ImageIcon("images/WhiteKing.png");
+	WhiteBishop = new ImageIcon("images/whiteBishop.png");
 	
 	BlackRook = new ImageIcon("images/BlackRook.png");
 	BlackKnight = new ImageIcon("images/black Knight.png");
@@ -86,6 +92,10 @@ public void paint(Graphics g) { //main paint method
     whiteRook.paintIcon(this, g2d, basicPositionEnd, basicPositionWhiteY);
     WhiteKnight.paintIcon(this, g2d, 30, basicPositionWhiteY);
     WhiteKnight.paintIcon(this, g2d,280 , basicPositionWhiteY);
+    WhiteKing.paintIcon(this, g2d, 145, basicPositionWhiteY);
+    WhiteQueen.paintIcon(this, g2d,195,basicPositionWhiteY);
+    WhiteBishop.paintIcon(this, g2d, 90, basicPositionWhiteY);
+    WhiteBishop.paintIcon(this, g2d, 240, basicPositionWhiteY);
    WhitePawnDraw(g2d);
     
     
