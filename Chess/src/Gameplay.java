@@ -13,6 +13,7 @@ public class Gameplay extends JPanel {
 	private final ImageIcon BlackRook;
 	private final ImageIcon WhiteKnight; 
 	private final ImageIcon BlackKnight;
+	private final ImageIcon BlackBishop;
 	int basicPositionStart = - 2;
 	int basicPositionEnd = 344;
 	
@@ -21,9 +22,11 @@ public Gameplay(){
 	setFocusable(true);
 	//map = new ImageIcon("images/board.png");
 	whiteRook = new ImageIcon("images/WhiteRook.png");
-	BlackRook = new ImageIcon("images/BlackRook.png");
 	WhiteKnight = new ImageIcon("images/white Knight.png");
+	
+	BlackRook = new ImageIcon("images/BlackRook.png");
 	BlackKnight = new ImageIcon("images/black Knight.png");
+	BlackBishop = new ImageIcon("images/bishop.png");
 	
 	}
 
@@ -51,12 +54,16 @@ public void paint(Graphics g) { //main paint method
     paintMap(g);
     whiteRook.paintIcon(this, g2d, basicPositionStart, basicPositionStart);
     whiteRook.paintIcon(this, g2d, basicPositionEnd, basicPositionStart);
-    BlackRook.paintIcon(this, g2d, basicPositionStart, basicPositionEnd);
-    BlackRook.paintIcon(this, g2d, basicPositionEnd , basicPositionEnd);
     WhiteKnight.paintIcon(this, g2d, 30, basicPositionStart);
     WhiteKnight.paintIcon(this, g2d,280 , basicPositionStart);
+    
+    
+    BlackRook.paintIcon(this, g2d, basicPositionStart, basicPositionEnd);
+    BlackRook.paintIcon(this, g2d, basicPositionEnd , basicPositionEnd);
     BlackKnight.paintIcon(this, g2d, 30, basicPositionEnd);
     BlackKnight.paintIcon(this, g2d, 280 , basicPositionEnd);
+    BlackBishop.paintIcon(this, g2d, 90, basicPositionEnd);
+    BlackBishop.paintIcon(this, g2d, 240, basicPositionEnd);
     g.dispose();
 }
 
