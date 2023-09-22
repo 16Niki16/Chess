@@ -49,14 +49,14 @@ public void paint(Graphics g) { //main paint method
     Graphics2D g2d = (Graphics2D) g.create();
    // map.paintIcon(this, g2d, 0, 0);
     paintMap(g);
-    whiteRook.paintIcon(this, g2d, -2, -2);
-    whiteRook.paintIcon(this, g2d, 347, -2);
-    BlackRook.paintIcon(this, g2d, -2, 344);
-    BlackRook.paintIcon(this, g2d, 347 , 344);
-    WhiteKnight.paintIcon(this, g2d, 30, -2);
-    WhiteKnight.paintIcon(this, g2d,280 , -2);
-    BlackKnight.paintIcon(this, g2d, 30, 344);
-    BlackKnight.paintIcon(this, g2d, 280 , 344);
+    whiteRook.paintIcon(this, g2d, basicPositionStart, basicPositionStart);
+    whiteRook.paintIcon(this, g2d, basicPositionEnd, basicPositionStart);
+    BlackRook.paintIcon(this, g2d, basicPositionStart, basicPositionEnd);
+    BlackRook.paintIcon(this, g2d, basicPositionEnd , basicPositionEnd);
+    WhiteKnight.paintIcon(this, g2d, 30, basicPositionStart);
+    WhiteKnight.paintIcon(this, g2d,280 , basicPositionStart);
+    BlackKnight.paintIcon(this, g2d, 30, basicPositionEnd);
+    BlackKnight.paintIcon(this, g2d, 280 , basicPositionEnd);
     g.dispose();
 }
 
