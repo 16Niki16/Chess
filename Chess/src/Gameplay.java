@@ -10,8 +10,10 @@ import javax.swing.JPanel;
 public class Gameplay extends JPanel {
 	//private final ImageIcon map;
 	private final ImageIcon whiteRook;
-	private final ImageIcon BlackRook;
 	private final ImageIcon WhiteKnight; 
+	private final ImageIcon WhitePawn;
+	
+	private final ImageIcon BlackRook;
 	private final ImageIcon BlackKnight;
 	private final ImageIcon BlackBishop;
 	private final ImageIcon BlackKing;
@@ -28,6 +30,7 @@ public Gameplay(){
 	//map = new ImageIcon("images/board.png");
 	whiteRook = new ImageIcon("images/WhiteRook.png");
 	WhiteKnight = new ImageIcon("images/white Knight.png");
+	WhitePawn = new ImageIcon("images/whitePawn.png");
 	
 	BlackRook = new ImageIcon("images/BlackRook.png");
 	BlackKnight = new ImageIcon("images/black Knight.png");
@@ -63,7 +66,15 @@ public void BlackPawnsDraw(Graphics g) {
 		BlackPawn.paintIcon(this, g, startingPosX, basicPawnY);
 		startingPosX+=50;
 	}
-	
+}
+
+public void WhitePawnDraw(Graphics g) {
+	int basicPawnY = basicPositionWhiteY + 48;
+	int startingPosX = basicPositionStartX;
+	for(int i = 0;i<8;i++) {
+		WhitePawn.paintIcon(this, g, startingPosX, basicPawnY);
+		startingPosX+=50;
+	}
 }
 
 public void paint(Graphics g) { //main paint method
@@ -75,6 +86,7 @@ public void paint(Graphics g) { //main paint method
     whiteRook.paintIcon(this, g2d, basicPositionEnd, basicPositionWhiteY);
     WhiteKnight.paintIcon(this, g2d, 30, basicPositionWhiteY);
     WhiteKnight.paintIcon(this, g2d,280 , basicPositionWhiteY);
+   WhitePawnDraw(g2d);
     
     
     BlackRook.paintIcon(this, g2d, basicPositionStartX, basicPositionEnd);
