@@ -14,8 +14,13 @@ public class Gameplay extends JPanel {
 	private final ImageIcon WhiteKnight; 
 	private final ImageIcon BlackKnight;
 	private final ImageIcon BlackBishop;
-	int basicPositionStart = - 2;
-	int basicPositionEnd = 344;
+	private final ImageIcon BlackKing;
+	private final ImageIcon BlackQueen;
+	private final ImageIcon BlackPawn;
+	
+	int basicPositionStartX = -8;
+	int basicPositionEnd = 340;
+	int basicPositionWhiteY = -13;
 	
 	
 public Gameplay(){	
@@ -27,6 +32,9 @@ public Gameplay(){
 	BlackRook = new ImageIcon("images/BlackRook.png");
 	BlackKnight = new ImageIcon("images/black Knight.png");
 	BlackBishop = new ImageIcon("images/bishop.png");
+	BlackKing = new ImageIcon("images/king.png");
+	BlackQueen = new ImageIcon("images/queen.png");
+	BlackPawn = new ImageIcon("images/pawn.png");
 	
 	}
 
@@ -47,23 +55,37 @@ public void paintMap(Graphics g){
         }
     }
 }
+
+public void BlackPawnsDraw(Graphics g) {
+	int basicPawnY = basicPositionEnd - 60;
+	int startingPosX = basicPositionStartX;
+	for(int i = 0;i<8;i++) {
+		BlackPawn.paintIcon(this, g, startingPosX, basicPawnY);
+		startingPosX+=50;
+	}
+	
+}
+
 public void paint(Graphics g) { //main paint method
     super.paintComponent(g);
     Graphics2D g2d = (Graphics2D) g.create();
    // map.paintIcon(this, g2d, 0, 0);
     paintMap(g);
-    whiteRook.paintIcon(this, g2d, basicPositionStart, basicPositionStart);
-    whiteRook.paintIcon(this, g2d, basicPositionEnd, basicPositionStart);
-    WhiteKnight.paintIcon(this, g2d, 30, basicPositionStart);
-    WhiteKnight.paintIcon(this, g2d,280 , basicPositionStart);
+    whiteRook.paintIcon(this, g2d, basicPositionStartX, basicPositionWhiteY);
+    whiteRook.paintIcon(this, g2d, basicPositionEnd, basicPositionWhiteY);
+    WhiteKnight.paintIcon(this, g2d, 30, basicPositionWhiteY);
+    WhiteKnight.paintIcon(this, g2d,280 , basicPositionWhiteY);
     
     
-    BlackRook.paintIcon(this, g2d, basicPositionStart, basicPositionEnd);
+    BlackRook.paintIcon(this, g2d, basicPositionStartX, basicPositionEnd);
     BlackRook.paintIcon(this, g2d, basicPositionEnd , basicPositionEnd);
     BlackKnight.paintIcon(this, g2d, 30, basicPositionEnd);
     BlackKnight.paintIcon(this, g2d, 280 , basicPositionEnd);
     BlackBishop.paintIcon(this, g2d, 90, basicPositionEnd);
     BlackBishop.paintIcon(this, g2d, 240, basicPositionEnd);
+    BlackKing.paintIcon(this, g2d, 145, basicPositionEnd);
+    BlackQueen.paintIcon(this, g2d, 195, basicPositionEnd);
+    BlackPawnsDraw(g2d);
     g.dispose();
 }
 
